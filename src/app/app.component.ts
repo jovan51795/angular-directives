@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'blog';
+  public name = "jovanie"
+  public message = "";
+  public msg = "";
+  public count = 0;
+
+  decrement() {
+    this.count++;
+  }
 }

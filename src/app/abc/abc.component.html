@@ -1,0 +1,38 @@
+<!-- <div class="container">
+    <h1>Child Component</h1>
+    <h2>{{parentData}}</h2>
+    <button (click)="fireEvent()">Event</button>
+</div>
+<div class="container">
+    <p>{{counter}}</p>
+    <input type="text" [(ngModel)]="msg">
+    <button (click)="sendMessage()">Send Message</button>
+</div> -->
+<div class="container m-5">
+    <table class="table table-bordered">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Legal Age(Y/N)</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td> {{user.firstname}}</td>
+            <td> {{user.lastname}}</td>
+            <td>{{user.age}}</td>
+            <td> 
+                <ng-template [ngIf]="user.isLegalAge" [ngIfElse]="loggedOut">
+                    <div class="color-primary">
+                      YES
+                    </div>
+                  </ng-template>
+                  
+                  <ng-template #loggedOut>
+                    <div class="color-danger">
+                      NO
+                    </div>
+                  </ng-template>
+            </td>
+        </tr>
+    </table>
+</div>
